@@ -74,6 +74,11 @@ def predict():
 	# return the data dictionary as a JSON response
 	return flask.jsonify(data)
 
+# Healthcheck
+@app.route("/health")
+def health():
+  return "UP!"
+
 # if this is the main thread of execution first load the model and
 # then start the server
 if __name__ == "__main__":
